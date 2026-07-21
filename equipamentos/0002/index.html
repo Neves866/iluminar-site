@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Evita que o relatório apareça em pesquisas do Google -->
+  <meta name="robots" content="noindex, nofollow">
+
+  <title>Relatório do Equipamento | Iluminar</title>
+
+  <meta
+    name="description"
+    content="Relatório de manutenção de equipamento de ar-condicionado atendido pela Iluminar."
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0f172a;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 850px;
+      margin: auto;
+    }
+
+    header {
+      background: #0f172a;
+      padding: 22px 0;
+      text-align: center;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    header h1 {
+      color: #facc15;
+      font-size: 25px;
+      font-weight: 700;
+    }
+
+    header p {
+      color: #94a3b8;
+      font-size: 14px;
+      margin-top: 4px;
+    }
+
+    main {
+      padding: 35px 0 60px;
+    }
+
+    .report-header {
+      background: linear-gradient(135deg, #1e293b, #172033);
+      border: 1px solid #334155;
+      border-radius: 14px;
+      padding: 28px;
+      margin-bottom: 25px;
+      text-align: center;
+    }
+
+    .report-header .label {
+      color: #94a3b8;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .report-header h2 {
+      color: #ffffff;
+      font-size: 27px;
+      margin: 5px 0 8px;
+    }
+
+    .equipment-code {
+      display: inline-block;
+      background: #0f172a;
+      color: #facc15;
+      border: 1px solid #475569;
+      border-radius: 6px;
+      padding: 7px 14px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .status {
+      display: inline-block;
+      margin-top: 15px;
+      background: rgba(34, 197, 94, 0.15);
+      color: #4ade80;
+      border: 1px solid rgba(34, 197, 94, 0.4);
+      border-radius: 20px;
+      padding: 7px 15px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 22px;
+    }
+
+    .card h3 {
+      color: #facc15;
+      font-size: 20px;
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #334155;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .info-item {
+      background: #172033;
+      border-radius: 8px;
+      padding: 14px;
+    }
+
+    .info-item span {
+      display: block;
+      color: #94a3b8;
+      font-size: 12px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .info-item strong {
+      color: #f8fafc;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .maintenance-highlight {
+      background: #172033;
+      border-left: 4px solid #facc15;
+      border-radius: 8px;
+      padding: 18px;
+    }
+
+    .maintenance-highlight .date {
+      color: #facc15;
+      font-size: 19px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .maintenance-highlight h4 {
+      color: #ffffff;
+      font-size: 17px;
+      margin-bottom: 8px;
+    }
+
+    .maintenance-highlight p {
+      color: #cbd5e1;
+      font-size: 14px;
+    }
+
+    .next-maintenance {
+      background: rgba(250, 204, 21, 0.08);
+      border: 1px solid rgba(250, 204, 21, 0.35);
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .next-maintenance span {
+      display: block;
+      color: #cbd5e1;
+      font-size: 13px;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+
+    .next-maintenance strong {
+      color: #facc15;
+      font-size: 24px;
+    }
+
+    .next-maintenance p {
+      color: #94a3b8;
+      font-size: 13px;
+      margin-top: 8px;
+    }
+
+    .history-list {
+      list-style: none;
+    }
+
+    .history-item {
+      position: relative;
+      padding: 0 0 22px 25px;
+      border-left: 2px solid #475569;
+      margin-left: 7px;
+    }
+
+    .history-item:last-child {
+      border-left-color: transparent;
+      padding-bottom: 0;
+    }
+
+    .history-item::before {
+      content: '';
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background: #facc15;
+      border-radius: 50%;
+      left: -7px;
+      top: 5px;
+    }
+
+    .history-item .history-date {
+      color: #facc15;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .history-item h4 {
+      color: #ffffff;
+      font-size: 16px;
+      margin: 3px 0;
+    }
+
+    .history-item p {
+      color: #94a3b8;
+      font-size: 14px;
+    }
+
+    .notice {
+      background: #172033;
+      border-radius: 8px;
+      padding: 16px;
+      color: #cbd5e1;
+      font-size: 13px;
+      text-align: center;
+      margin-bottom: 22px;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      width: 100%;
+      background: #25d366;
+      color: #ffffff;
+      padding: 16px 25px;
+      font-size: 17px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #1ebe5d;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      background: #0f172a;
+      padding: 30px 0;
+      text-align: center;
+      border-top: 1px solid #1e293b;
+      color: #94a3b8;
+      font-size: 13px;
+    }
+
+    footer strong {
+      color: #facc15;
+    }
+
+    @media (max-width: 650px) {
+      main {
+        padding-top: 22px;
+      }
+
+      .report-header {
+        padding: 22px 16px;
+      }
+
+      .report-header h2 {
+        font-size: 23px;
+      }
+
+      .card {
+        padding: 19px 16px;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+        gap: 11px;
+      }
+
+      .next-maintenance strong {
+        font-size: 21px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <h1>Iluminar</h1>
+      <p>Instalações, climatização e manutenção</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <section class="report-header">
+        <p class="label">Relatório de manutenção</p>
+
+        <!-- ALTERE AQUI: identificação principal -->
+        <h2>Ar-condicionado do Escritório</h2>
+
+        <!-- ALTERE AQUI: código do equipamento -->
+        <div class="equipment-code">
+          Código: 0002
+        </div>
+
+        <!-- ALTERE AQUI: situação atual -->
+        <div class="status">
+          ✓ Equipamento em funcionamento
+        </div>
+      </section>
+
+      <section class="card">
+        <h3>Dados do equipamento</h3>
+
+        <div class="info-grid">
+
+          <div class="info-item">
+            <span>Marca</span>
+
+            <!-- ALTERE AQUI -->
+            <strong>Midea</strong>
+          </div>
+
+          <div class="info-item">
+            <span>Capacidade</span>
+
+            <!-- ALTERE AQUI -->
+            <strong>12.000 BTUs</strong>
+          </div>
+
+          <div class="info-item">
+            <span>Tipo</span>
+
+            <!-- ALTERE AQUI -->
+            <strong>Split Inverter</strong>
+          </div>
+
+          <div class="info-item">
+            <span>Ambiente</span>
+
+            <!-- ALTERE AQUI -->
+            <strong>Escritório</strong>
+          </div>
+
+          <div class="info-item">
+            <span>Data da instalação</span>
+
+            <!-- ALTERE AQUI -->
+            <strong>10/07/2025</strong>
+          </div>
+
+          <div class="info-item">
+            <span>Empresa responsável</span>
+            <strong>Iluminar</strong>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="card">
+        <h3>Última manutenção</h3>
+
+        <div class="maintenance-highlight">
+
+          <!-- ALTERE AQUI: data da última manutenção -->
+          <div class="date">21/07/2026</div>
+
+          <!-- ALTERE AQUI: serviço realizado -->
+          <h4>Higienização preventiva completa</h4>
+
+          <!-- ALTERE AQUI: descrição e observações -->
+          <p>
+            Foram realizados a higienização dos filtros, limpeza da evaporadora,
+            verificação da drenagem e teste geral de funcionamento. O equipamento
+            foi entregue funcionando normalmente.
+          </p>
+
+        </div>
+      </section>
+
+      <section class="card">
+        <h3>Próxima manutenção recomendada</h3>
+
+        <div class="next-maintenance">
+
+          <span>Previsão para nova manutenção</span>
+
+          <!-- ALTERE AQUI: próxima manutenção -->
+          <strong>Janeiro de 2027</strong>
+
+          <!-- ALTERE AQUI: orientação -->
+          <p>
+            A data poderá ser antecipada caso o equipamento apresente redução de
+            desempenho, mau cheiro, ruídos ou vazamento de água.
+          </p>
+
+        </div>
+      </section>
+
+      <section class="card">
+        <h3>Histórico de atendimentos</h3>
+
+        <ul class="history-list">
+
+          <!-- MANUTENÇÃO MAIS RECENTE -->
+          <li class="history-item">
+            <div class="history-date">21/07/2026</div>
+
+            <h4>Higienização preventiva completa</h4>
+
+            <p>
+              Limpeza dos filtros, evaporadora e sistema de drenagem.
+              Equipamento testado e funcionando normalmente.
+            </p>
+          </li>
+
+          <!-- MANUTENÇÃO ANTERIOR -->
+          <li class="history-item">
+            <div class="history-date">15/01/2026</div>
+
+            <h4>Limpeza preventiva</h4>
+
+            <p>
+              Higienização dos filtros e avaliação geral do funcionamento.
+            </p>
+          </li>
+
+          <!-- INSTALAÇÃO -->
+          <li class="history-item">
+            <div class="history-date">10/07/2025</div>
+
+            <h4>Instalação do equipamento</h4>
+
+            <p>
+              Instalação, testes de funcionamento e orientação de utilização.
+            </p>
+          </li>
+
+        </ul>
+      </section>
+
+      <div class="notice">
+        Este relatório apresenta o histórico técnico do equipamento identificado
+        pelo código acima. Em caso de dúvidas, fale diretamente com a Iluminar.
+      </div>
+
+      <a
+        class="btn"
+        href="https://api.whatsapp.com/send?phone=5545998542732&text=Olá%2C%20acessei%20o%20relatório%20do%20equipamento%200002%20e%20gostaria%20de%20atendimento."
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        📲 Falar com a Iluminar
+      </a>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <strong>Iluminar</strong><br>
+      Instalações elétricas e climatização<br>
+      Cascavel - PR • WhatsApp: (45) 9854-2732
+    </div>
+  </footer>
+
+</body>
+</html>
