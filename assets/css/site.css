@@ -389,6 +389,24 @@ h3 {
   border-color: var(--line);
   background: rgba(11, 29, 41, 0.75);
 }
+.btn-instagram {
+  color: #fff;
+  border-color: transparent;
+  background: linear-gradient(
+    135deg,
+    #405de6 0%,
+    #833ab4 32%,
+    #c13584 52%,
+    #e1306c 68%,
+    #fd1d1d 84%,
+    #f77737 100%
+  );
+  box-shadow: 0 12px 28px rgba(193, 53, 132, 0.25);
+}
+
+.btn-instagram:hover {
+  box-shadow: 0 15px 34px rgba(193, 53, 132, 0.38);
+}
 
 .home-services {
   padding: 88px 0;
