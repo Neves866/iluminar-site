@@ -417,6 +417,7 @@ h3 {
 }
 
 .service-card {
+  text-decoration: none;
   position: relative;
   grid-column: span 3;
   min-height: 390px;
@@ -425,6 +426,7 @@ h3 {
   border-radius: 24px;
   background: var(--surface);
   isolation: isolate;
+
 }
 
 .service-card:nth-child(n + 3) {
