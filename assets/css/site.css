@@ -283,7 +283,7 @@ a:focus-visible {
 }
 
 .home-hero {
-  min-height: 590px;
+  min-height: auto;
   display: grid;
   place-items: start center;
   text-align: center;
@@ -294,7 +294,24 @@ a:focus-visible {
 
 .home-hero-content {
   max-width: 780px;
-  padding: 40px 0 70px;
+  padding: 34px 0 44px;
+}
+.home-hero h1 {
+  font-size: clamp(2.1rem, 4.4vw, 4.2rem);
+  line-height: 1.04;
+}
+
+.home-hero .lead {
+  margin-top: 16px;
+}
+
+.home-hero .actions {
+  margin-top: 22px;
+}
+
+.home-hero .btn {
+  min-height: 48px;
+  padding: 12px 20px;
 }
 
 .eyebrow {
@@ -1143,11 +1160,11 @@ h3 {
   }
 
   .home-hero {
-    min-height: 500px;
+    min-height: auto;
   }
 
   .home-hero-content {
-    padding-block: 70px;
+    padding: 42px 0 50px;
   }
 
   .actions,
