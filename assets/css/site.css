@@ -287,15 +287,20 @@ a:focus-visible {
   display: grid;
   place-items: start center;
   text-align: center;
+
   background:
-    linear-gradient(135deg, rgba(3, 9, 15, 0.95), rgba(12, 34, 48, 0.9)),
-    radial-gradient(circle at center, rgba(32, 200, 245, 0.12), transparent 50%);
+    linear-gradient(90deg,
+      rgba(3, 9, 15, 0.36) 0%,
+      rgba(3, 9, 15, 0.58) 50%,
+      rgba(3, 9, 15, 0.38) 100%),
+    url("../images/fundo-hero.png") center / cover no-repeat;
 }
 
 .home-hero-content {
   max-width: 780px;
   padding: 34px 0 44px;
 }
+
 .home-hero h1 {
   font-size: clamp(2.1rem, 4.4vw, 4.2rem);
   line-height: 1.04;
@@ -406,18 +411,17 @@ h3 {
   border-color: var(--line);
   background: rgba(11, 29, 41, 0.75);
 }
+
 .btn-instagram {
   color: #fff;
   border-color: transparent;
-  background: linear-gradient(
-    135deg,
-    #405de6 0%,
-    #833ab4 32%,
-    #c13584 52%,
-    #e1306c 68%,
-    #fd1d1d 84%,
-    #f77737 100%
-  );
+  background: linear-gradient(135deg,
+      #405de6 0%,
+      #833ab4 32%,
+      #c13584 52%,
+      #e1306c 68%,
+      #fd1d1d 84%,
+      #f77737 100%);
   box-shadow: 0 12px 28px rgba(193, 53, 132, 0.25);
 }
 
@@ -593,6 +597,7 @@ h3 {
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
+
 .service-hero .display-title {
   font-size: clamp(2.2rem, 4.8vw, 4.6rem);
   line-height: 1.05;
