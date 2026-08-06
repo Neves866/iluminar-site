@@ -65,36 +65,65 @@ a:focus-visible {
   margin-inline: auto;
 }
 
+/* ========================================
+   MENU SUPERIOR FLUTUANTE
+======================================== */
+
 .site-header {
-  position: relative;
-  z-index: 20;
-  border-bottom: 1px solid rgba(32, 200, 245, 0.16);
-  background: rgba(3, 9, 15, 0.9);
-  backdrop-filter: blur(16px);
+  position: fixed;
+  top: 12px;
+  left: 50%;
+  z-index: 60;
+
+  width: min(calc(100% - 28px), var(--container));
+
+  transform: translateX(-50%);
 }
 
 .header-inner {
-  min-height: 88px;
+  min-height: 72px;
+
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+
+  padding: 10px 12px 10px 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 22px;
+
+  background: rgba(3, 9, 15, 0.56);
+
+  box-shadow:
+    0 18px 48px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
 }
+
+/* Marca da Iluminar */
 
 .brand {
   display: inline-flex;
   align-items: center;
   gap: 12px;
+
+  color: var(--text);
   text-decoration: none;
 }
 
 .brand img {
   width: 42px;
   height: 54px;
+
   object-fit: contain;
 }
 
 .brand-copy {
   display: grid;
+
   line-height: 1.05;
 }
 
@@ -106,40 +135,59 @@ a:focus-visible {
 
 .brand-tagline {
   margin-top: 7px;
+
   color: var(--yellow);
+
   font-size: 0.58rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
+/* Botão que abre a barra lateral */
+
 .menu-toggle {
-  position: fixed;
-  z-index: 60;
-  top: 20px;
-  left: 20px;
-  width: 50px;
-  height: 50px;
+  position: static;
+
+  width: 48px;
+  height: 48px;
+  flex: 0 0 auto;
+
   display: grid;
   place-content: center;
   gap: 5px;
-  border: 1px solid rgba(32, 200, 245, 0.34);
-  border-radius: 15px;
-  color: var(--text);
-  background: rgba(8, 24, 34, 0.96);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
+
+  padding: 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.07);
+
+  box-shadow: none;
+
   cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
 }
 
 .menu-toggle span {
   width: 22px;
   height: 2px;
-  border-radius: 2px;
+
+  border-radius: 999px;
+
   background: var(--yellow);
 }
 
 .menu-toggle:hover {
-  border-color: var(--yellow);
+  border-color: rgba(255, 210, 31, 0.72);
+  background: rgba(255, 255, 255, 0.11);
+
+  transform: translateY(-1px);
 }
 
 .menu-overlay {
@@ -287,6 +335,7 @@ a:focus-visible {
   display: grid;
   place-items: start center;
   text-align: center;
+  padding-top: 78px;
 
   background:
     linear-gradient(90deg,
@@ -1145,19 +1194,41 @@ h3 {
 }
 
 @media (max-width: 700px) {
+  .site-header {
+    top: 10px;
+    width: calc(100% - 20px);
+  }
+
   .header-inner {
-    min-height: 82px;
-    justify-content: flex-end;
+    min-height: 64px;
+    gap: 10px;
+    padding: 8px 9px 8px 14px;
+    border-radius: 18px;
   }
 
   .site-header .brand {
-    transform: scale(0.88);
-    transform-origin: right center;
+    gap: 9px;
+  }
+
+  .site-header .brand img {
+    width: 35px;
+    height: 44px;
+  }
+
+  .site-header .brand-name {
+    font-size: 0.94rem;
+  }
+
+  .site-header .brand-tagline {
+    margin-top: 5px;
+    font-size: 0.51rem;
+    letter-spacing: 0.1em;
   }
 
   .menu-toggle {
-    top: 16px;
-    left: 16px;
+    width: 44px;
+    height: 44px;
+    border-radius: 13px;
   }
 
   .side-menu {
@@ -1165,8 +1236,8 @@ h3 {
   }
 
   .home-hero {
-    min-height: auto;
-  }
+  padding-top: 64px;
+}
 
   .home-hero-content {
     padding: 42px 0 50px;
