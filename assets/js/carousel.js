@@ -22,14 +22,16 @@ document.addEventListener("DOMContentLoaded", () => {
    *   { imagem: "minha-foto.webp", titulo: "Instalação elétrica" }
    */
   const servicos = [
-    { imagem: "servico-instalacao-eletrica.webp",  titulo: "Instalação elétrica" },
-    { imagem: "servico-eletrica-iluminacao-v2.webp", titulo: "Iluminação residencial" },
-    { imagem: "servico-ar-condicionado.webp",      titulo: "Instalação de ar-condicionado" },
-    { imagem: "servico-higienizacao.webp",         titulo: "Higienização de ar-condicionado" },
-    { imagem: "servico-automacao.webp",            titulo: "Automação residencial" },
-    { imagem: "servico-seguranca-cameras-v2.webp",  titulo: "Instalação de câmeras" },
-    { imagem: "servico-eletrica-quadro-v2.webp",    titulo: "Quadro elétrico" },
-    { imagem: "servico-seguranca-video-porteiro-v2.webp", titulo: "Vídeo porteiro" },
+    { imagem: "foto-ar1.jpeg",       titulo: "Instalação de ar-condicionado" },
+    { imagem: "foto-ar2.jpeg",       titulo: "Ar-condicionado instalado" },
+    { imagem: "foto-ele1.jpeg",      titulo: "Instalação elétrica" },
+    { imagem: "foto-ilu1.jpeg",      titulo: "Iluminação residencial" },
+    { imagem: "foto-ilu2.jpeg",      titulo: "Projeto de iluminação" },
+    { imagem: "foto-ilu3.jpeg",      titulo: "Iluminação decorativa" },
+    { imagem: "foto-ilu4.jpeg",      titulo: "Luminárias instaladas" },
+    { imagem: "foto-ilu5.jpeg",      titulo: "Iluminação profissional" },
+    { imagem: "foto-ilu6.jpeg",      titulo: "Instalação de luminárias" },
+    { imagem: "foto-ilu7.jpeg",      titulo: "Iluminação integrada" },
   ];
 
   const IMG_BASE = "./assets/images/";

@@ -359,7 +359,7 @@ a:focus-visible {
   display: grid;
   place-items: start center;
 
-  padding-top: 64px;
+  padding-top: 130px;
 
   overflow: hidden;
   isolation: isolate;
@@ -433,8 +433,8 @@ a:focus-visible {
 }
 
 .home-hero h1 {
-  font-size: clamp(1.9rem, 3.6vw, 3.4rem);
-  line-height: 1.04;
+  font-size: clamp(1.6rem, 2.8vw, 2.6rem);
+  line-height: 1.08;
 }
 
 .home-hero .lead {
@@ -478,7 +478,7 @@ h3 {
 
 .home-hero h1,
 .display-title {
-  font-size: clamp(2.45rem, 6vw, 5.4rem);
+  font-size: clamp(1.9rem, 4.2vw, 3.6rem);
   font-weight: 800;
   letter-spacing: -0.045em;
 }
@@ -489,9 +489,9 @@ h3 {
 
 .lead {
   max-width: 720px;
-  margin-top: 24px;
+  margin-top: 18px;
   color: var(--muted);
-  font-size: clamp(1rem, 2vw, 1.18rem);
+  font-size: clamp(0.9rem, 1.5vw, 1.05rem);
 }
 
 .actions {
@@ -674,6 +674,7 @@ h3 {
   min-height: clamp(480px, 62svh, 540px);
   display: grid;
   grid-template-columns: minmax(0, 1.04fr) minmax(360px, 0.96fr);
+  padding-top: 130px;
   border-bottom: 1px solid var(--line);
 }
 
@@ -681,7 +682,7 @@ h3 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 42px max(5vw, calc((100vw - var(--container)) / 2));
+  padding: 42px max(5vw, calc((100vw - var(--container)) / 2)) 60px;
 }
 
 .service-hero-media {
@@ -722,8 +723,8 @@ h3 {
 }
 
 .service-hero .display-title {
-  font-size: clamp(2.2rem, 4.8vw, 4.6rem);
-  line-height: 1.05;
+  font-size: clamp(1.8rem, 3.6vw, 3.2rem);
+  line-height: 1.08;
 }
 
 .service-hero .lead {
@@ -1235,7 +1236,7 @@ h3 {
   }
 
   .service-hero-copy {
-    padding: 80px 5vw 60px;
+    padding: 42px 5vw 60px;
   }
 
   .service-hero-media {
@@ -1319,7 +1320,7 @@ h3 {
   }
 
   .home-hero {
-    padding-top: 64px;
+    padding-top: 120px;
   }
 
   .aurora-background {
@@ -1379,7 +1380,7 @@ h3 {
   }
 
   .service-hero-copy {
-    padding-top: 68px;
+    padding-top: 42px;
   }
 
   .service-hero-media {
