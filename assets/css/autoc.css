@@ -108,7 +108,7 @@ body.autoc-page {
   min-height: 680px;
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(440px, 1.1fr);
-  padding-top: 130px;
+  padding-top: 100px;
   border-bottom: 1px solid var(--autoc-line);
 }
 
