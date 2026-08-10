@@ -17,6 +17,11 @@ body.autoc-page {
     var(--autoc-bg-deep);
 }
 
+.autoc-page .skip-link {
+  background: var(--autoc-accent);
+  color: #071421;
+}
+
 .autoc-page .site-header {
   border-color: var(--autoc-line);
   background: rgba(4, 12, 20, 0.92);
