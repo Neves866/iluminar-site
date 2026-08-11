@@ -76,7 +76,92 @@
   line-height: 1.7;
 }
 
+.electrical-overview-layout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(22px, 3.8vw, 48px);
+  align-items: stretch;
+}
+
+.electrical-overview-media {
+  border-radius: 26px;
+  overflow: hidden;
+  min-height: clamp(360px, 46vw, 560px);
+}
+
+.electrical-overview-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.electrical-overview-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.electrical-overview-content h2 {
+  margin-top: 14px;
+}
+
+.electrical-overview-content > p {
+  margin-top: 16px;
+  color: var(--muted);
+  max-width: 56ch;
+}
+
+.electrical-diff-list {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 22px;
+}
+
+.electrical-diff-item {
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  gap: 10px;
+  align-items: start;
+}
+
+.electrical-diff-icon {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.electrical-diff-item h3 {
+  margin: 0;
+  font-size: 1.02rem;
+}
+
+.electrical-diff-item p {
+  margin-top: 6px;
+  font-size: 0.94rem;
+  line-height: 1.62;
+  color: var(--muted);
+}
+
 @media (max-width: 760px) {
+  .electrical-overview-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .electrical-overview-media {
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+    border-radius: 22px;
+  }
+
+  .electrical-diff-list {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 22px;
+  }
+
   .service-showcase-list {
     gap: 18px;
     margin-top: 32px;
