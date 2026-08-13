@@ -36,8 +36,55 @@
   line-height: 1.7;
 }
 
+/* ========================================
+   DESTAQUE DE PREÇO
+   ======================================== */
+
+.home-i360-price {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 22px;
+  padding: 14px 20px;
+  border: 1px solid rgba(255, 210, 31, 0.28);
+  border-radius: 16px;
+  background: rgba(255, 210, 31, 0.05);
+}
+
+.home-i360-price-label {
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.home-i360-price-value {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 5px;
+  margin-top: 2px;
+  color: var(--yellow);
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.home-i360-price-value small {
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.home-i360-price-note {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
 .home-i360-btn {
-  margin-top: 26px;
+  margin-top: 12px;
   min-height: 50px;
   padding: 12px 22px;
 }
@@ -127,6 +174,10 @@
 
   .home-i360-copy > p {
     margin-inline: auto;
+  }
+
+  .home-i360-price {
+    align-items: center;
   }
 
   .home-i360-btn {

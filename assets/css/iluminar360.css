@@ -315,6 +315,7 @@ body.iluminar360-page {
   display: grid;
   gap: 11px;
   margin-top: 26px;
+  padding-bottom: 26px;
   list-style: none;
 }
 
