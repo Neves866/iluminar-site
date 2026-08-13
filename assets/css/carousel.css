@@ -26,6 +26,26 @@
   cursor: grab;
 
   outline: none;
+
+  /* Fade sutil nas extremidades horizontais:
+     quase todo o carrossel permanece 100% visível e a
+     transparência aparece somente bem próximo das bordas,
+     escondendo suavemente o corte do card na saída.
+     A máscara usa transparência, revelando o fundo do hero. */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 4%,
+    black 96%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 4%,
+    black 96%,
+    transparent 100%
+  );
 }
 
 .services-carousel::-webkit-scrollbar {
@@ -164,6 +184,23 @@
     --card-width: min(62vw, 260px);
     --card-gap: 14px;
     padding: 0 0 18px;
+
+    /* Fade ainda mais discreto no mobile para não esconder
+       uma parte excessiva dos cards */
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 3%,
+      black 97%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 3%,
+      black 97%,
+      transparent 100%
+    );
   }
 
   .service-work-card figcaption {

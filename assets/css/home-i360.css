@@ -1,0 +1,167 @@
+/* ========================================
+   HOME — SEÇÃO ILUMINAR 360
+   Bloco horizontal premium entre o carrossel
+   e os cards de serviços da home
+   ======================================== */
+
+.home-i360 {
+  position: relative;
+  padding: 72px 0;
+  background: var(--bg-soft);
+  border-bottom: 1px solid var(--line);
+}
+
+.home-i360-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(32px, 5vw, 64px);
+  align-items: center;
+}
+
+/* ========================================
+   CONTEÚDO PRINCIPAL
+   ======================================== */
+
+.home-i360-copy h2 {
+  font-size: clamp(1.8rem, 3.6vw, 2.9rem);
+  letter-spacing: -0.035em;
+  line-height: 1.12;
+}
+
+.home-i360-copy > p {
+  max-width: 560px;
+  margin-top: 16px;
+  color: var(--muted);
+  font-size: clamp(0.9rem, 1.4vw, 1rem);
+  line-height: 1.7;
+}
+
+.home-i360-btn {
+  margin-top: 26px;
+  min-height: 50px;
+  padding: 12px 22px;
+}
+
+.home-i360-btn svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.2s ease;
+}
+
+.home-i360-btn:hover svg {
+  transform: translateX(4px);
+}
+
+/* ========================================
+   DIFERENCIAIS / BENEFÍCIOS
+   ======================================== */
+
+.home-i360-benefits {
+  display: grid;
+  gap: 14px;
+}
+
+.home-i360-benefit {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: linear-gradient(150deg, var(--surface-2), var(--surface));
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.home-i360-benefit:hover {
+  border-color: rgba(255, 210, 31, 0.45);
+  transform: translateX(4px);
+}
+
+.home-i360-icon {
+  width: 46px;
+  height: 46px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  color: #071018;
+  background: var(--yellow);
+}
+
+.home-i360-icon svg {
+  width: 23px;
+  height: 23px;
+}
+
+.home-i360-benefit strong {
+  display: block;
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.home-i360-benefit p {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
+/* ========================================
+   RESPONSIVO
+   ======================================== */
+
+@media (max-width: 980px) {
+  .home-i360 {
+    padding: 60px 0;
+  }
+
+  .home-i360-inner {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .home-i360-copy {
+    text-align: center;
+  }
+
+  .home-i360-copy > p {
+    margin-inline: auto;
+  }
+
+  .home-i360-btn {
+    margin-inline: auto;
+  }
+
+  .home-i360-benefits {
+    max-width: 560px;
+    margin-inline: auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .home-i360 {
+    padding: 52px 0;
+  }
+
+  .home-i360-copy h2 {
+    font-size: clamp(1.5rem, 6.5vw, 2rem);
+  }
+
+  .home-i360-btn {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .home-i360-benefit {
+    padding: 16px 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-i360-benefit,
+  .home-i360-btn svg {
+    transition: none;
+  }
+}
