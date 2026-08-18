@@ -412,16 +412,42 @@ a:focus-visible {
   padding: 40px 0 40px;
 }
 
-/* Grade do novo hero: textos à esquerda + carrossel à direita */
+/* Grade do novo hero: textos à esquerda + carrossel à direita.
+   O CTA de WhatsApp fica na coluna esquerda, abaixo do texto;
+   no mobile ele é reposicionado para depois do carrossel. */
 .hero-grid {
   display: grid;
   grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
-  gap: clamp(28px, 4vw, 56px);
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "copy  carousel"
+    "cta   carousel";
+  column-gap: clamp(28px, 4vw, 56px);
+  row-gap: 24px;
   align-items: center;
 }
 
 .hero-copy {
+  grid-area: copy;
   text-align: left;
+}
+
+.hero-carousel {
+  grid-area: carousel;
+}
+
+.hero-cta {
+  grid-area: cta;
+  align-self: start;
+  justify-self: start;
+
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.22);
+}
+
+.hero-cta svg {
+  width: 22px;
+  height: 22px;
+  flex: 0 0 auto;
 }
 
 .hero-copy .lead {
@@ -448,6 +474,13 @@ a:focus-visible {
 .home-hero .btn {
   min-height: 46px;
   padding: 11px 19px;
+}
+
+/* CTA principal do hero — mantém o tamanho padrão do .btn
+   para ser o destaque principal da página */
+.home-hero .hero-cta {
+  min-height: 54px;
+  padding: 14px 26px;
 }
 
 .eyebrow {

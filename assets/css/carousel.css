@@ -153,10 +153,15 @@
    RESPONSIVIDADE
    ======================================== */
 
-/* Empilha o hero (texto em cima, carrossel embaixo) */
+/* Empilha o hero (texto em cima, carrossel no meio, CTA embaixo) */
 @media (max-width: 980px) {
   .hero-grid {
     grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "copy"
+      "carousel"
+      "cta";
     gap: 16px;
   }
 
@@ -172,6 +177,10 @@
     justify-content: center;
   }
 
+  .hero-cta {
+    justify-self: center;
+  }
+
   .services-carousel {
     --card-width: clamp(220px, 30vw, 300px);
     padding: 10px 16px 18px;
@@ -180,6 +189,11 @@
 
 /* Celular */
 @media (max-width: 700px) {
+  .hero-cta {
+    justify-self: stretch;
+    margin-top: 6px;
+  }
+
   .services-carousel {
     --card-width: min(62vw, 260px);
     --card-gap: 14px;
