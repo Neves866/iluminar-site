@@ -11,6 +11,22 @@
     gtag('config', 'AW-18325768613');
   </script>
 
+  <!-- Event snippet for BOTÃO WHATS ILUMINAR 19/08 conversion page -->
+  <script>
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-18325768613/3VofCLOx3OMcEKWTtKJE',
+        'event_callback': callback
+    });
+    return false;
+  }
+  </script>
+
   <meta charset="UTF-8">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -498,6 +514,7 @@
         href="https://api.whatsapp.com/send?phone=5545988429228&text=Olá%2C%20acessei%20o%20relatório%20do%20equipamento%200001%20e%20gostaria%20de%20atendimento."
         target="_blank"
         rel="noopener noreferrer"
+        onclick="gtag_report_conversion();"
       >
         📲 Falar com a Iluminar
       </a>
