@@ -30,51 +30,112 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Iluminar | Elétrica, Climatização e Tecnologia em Cascavel</title>
+  <title>Eletricista e Ar-Condicionado em Cascavel | Iluminar</title>
   <meta name="description"
-    content="Soluções em elétrica, climatização, segurança e automação em Cascavel e região. Conheça os serviços da Iluminar e solicite um orçamento.">
+    content="Especialista em elétrica e climatização em Cascavel. Serviços de eletricista, instalação de ar-condicionado, segurança eletrônica e automação residencial.">
   <meta name="theme-color" content="#03090f">
+  <link rel="canonical" href="https://iluminarcvel.com.br/">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Iluminar">
-  <meta property="og:title" content="Iluminar | Elétrica, Climatização e Tecnologia em Cascavel">
+  <meta property="og:title" content="Eletricista e Ar-Condicionado em Cascavel | Iluminar">
   <meta property="og:description"
-    content="Soluções em elétrica, climatização, segurança e automação em Cascavel e região. Conheça os serviços da Iluminar e solicite um orçamento.">
+    content="Especialista em elétrica e climatização em Cascavel. Serviços de eletricista, instalação de ar-condicionado, segurança eletrônica e automação residencial.">
   <meta property="og:url" content="https://iluminarcvel.com.br/">
   <meta property="og:image" content="https://iluminarcvel.com.br/assets/images/teste.jpeg">
   <meta property="og:locale" content="pt_BR">
 
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Iluminar | Elétrica, Climatização e Tecnologia em Cascavel">
+  <meta name="twitter:title" content="Eletricista e Ar-Condicionado em Cascavel | Iluminar">
   <meta name="twitter:description"
-    content="Soluções em elétrica, climatização, segurança e automação em Cascavel e região.">
+    content="Especialista em elétrica e climatização em Cascavel. Serviços de eletricista, instalação de ar-condicionado, segurança eletrônica e automação residencial.">
   <meta name="twitter:image" content="https://iluminarcvel.com.br/assets/images/teste.jpeg">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="./assets/images/favicon.svg">
 
-  <!-- Schema.org LocalBusiness -->
+  <!-- Schema.org Graph -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Iluminar",
-    "description": "Soluções em elétrica, climatização, segurança eletrônica e automação residencial em Cascavel e região.",
-    "url": "https://iluminarcvel.com.br/",
-    "telephone": "+5545988429228",
-    "areaServed": "Cascavel e região",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Cascavel",
-      "addressRegion": "PR",
-      "addressCountry": "BR"
-    },
-    "sameAs": [
-      "https://www.instagram.com/iluminar_cvel/"
-    ],
-    "priceRange": "$$"
+    "@graph": [
+      {
+        "@type": ["LocalBusiness", "Electrician", "HVACBusiness"],
+        "@id": "https://iluminarcvel.com.br/#business",
+        "name": "Iluminar",
+        "url": "https://iluminarcvel.com.br/",
+        "logo": "https://iluminarcvel.com.br/assets/images/logo-iluminar-clara.png",
+        "description": "Especialista em elétrica, climatização, segurança eletrônica e automação residencial em Cascavel e região.",
+        "telephone": "+5545988429228",
+        "areaServed": {
+          "@type": "City",
+          "name": "Cascavel",
+          "sameAs": "https://www.wikidata.org/wiki/Q1135538"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Cascavel",
+          "addressRegion": "PR",
+          "addressCountry": "BR"
+        },
+        "sameAs": [
+          "https://www.instagram.com/iluminar_cvel/"
+        ],
+        "priceRange": "$$",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Serviços Iluminar",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Instalações Elétricas"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Instalação de Ar-Condicionado"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Higienização de Ar-Condicionado"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Segurança Eletrônica"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Automação Residencial"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://iluminarcvel.com.br/#website",
+        "url": "https://iluminarcvel.com.br/",
+        "name": "Iluminar",
+        "publisher": {
+          "@id": "https://iluminarcvel.com.br/#business"
+        }
+      }
+    ]
   }
   </script>
 
@@ -98,7 +159,7 @@
   <aside class="side-menu" id="menu-lateral" aria-label="Menu de informações" aria-hidden="true">
     <div class="side-menu-top">
       <a class="brand" href="./" aria-label="Iluminar - página inicial">
-        <img src="./assets/images/logo-iluminar-clara.png" alt="Logo da Iluminar">
+        <img src="./assets/images/logo-iluminar-clara.png" alt="Logo da Iluminar" width="180" height="60">
         <span class="brand-copy">
           <span class="brand-name">ILUMINAR</span>
           <span class="brand-tagline">Tecnologia & Conforto</span>
@@ -170,7 +231,7 @@
     <div class="header-inner">
 
       <a class="brand" href="./" aria-label="Iluminar - página inicial">
-        <img src="./assets/images/logo-iluminar-clara.png" alt="Logo da Iluminar">
+        <img src="./assets/images/logo-iluminar-clara.png" alt="Logo da Iluminar" width="180" height="60">
 
         <span class="brand-copy">
           <span class="brand-name">ILUMINAR</span>
@@ -195,7 +256,7 @@
         <div class="hero-grid">
           <div class="hero-copy">
             <span class="eyebrow">Cascavel e região</span>
-            <h1>Tecnologia e cuidado para o seu <span class="highlight">imóvel</span></h1>
+            <h1>Tecnologia, <span class="highlight">elétrica e climatização</span> para o seu imóvel em Cascavel</h1>
             <p class="lead">Soluções profissionais em elétrica, climatização, segurança eletrônica e automação para
               residências e empresas</p>
           </div>
@@ -286,7 +347,7 @@
         <div class="service-card-grid">
           <a class="service-card" href="./instalacoes-eletricas/">
             <img src="./assets/images/servico-instalacao-eletrica.webp"
-              alt="Eletricista realizando uma instalação elétrica residencial" loading="lazy" decoding="async">
+              alt="Eletricista da Iluminar realizando instalação elétrica residencial em Cascavel" loading="lazy" decoding="async" width="400" height="300">
             <div class="service-card-content">
               <span class="service-card-number">01</span>
               <h3>Instalações elétricas residenciais e comerciais</h3>
@@ -342,7 +403,7 @@
     <div class="container footer-grid">
       <div>
         <a class="brand" href="./">
-          <img src="./assets/images/logo-iluminar-clara.png" alt="Logo da Iluminar">
+          <img src="./assets/images/logo-iluminar-clara.png" alt="Logo da Iluminar" width="180" height="60">
           <span class="brand-copy">
             <span class="brand-name">ILUMINAR</span>
             <span class="brand-tagline">Nós cuidamos da tecnologia da sua casa</span>

@@ -1,0 +1,28 @@
+name: IndexNow Submission
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  indexnow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Submit to IndexNow
+        run: |
+          curl -X POST "https://api.indexnow.org/indexnow" \
+          -H "Content-Type: application/json; charset=utf-8" \
+          -d '{
+            "host": "iluminarcvel.com.br",
+            "key": "b7f3e4d5a6c7b8a9e0f1d2c3b4a59687",
+            "urlList": [
+              "https://iluminarcvel.com.br/",
+              "https://iluminarcvel.com.br/instalacoes-eletricas/",
+              "https://iluminarcvel.com.br/instalacao/",
+              "https://iluminarcvel.com.br/higienizacao/",
+              "https://iluminarcvel.com.br/seguranca-eletronica/",
+              "https://iluminarcvel.com.br/automacao/",
+              "https://iluminarcvel.com.br/iluminar-360/"
+            ]
+          }'
