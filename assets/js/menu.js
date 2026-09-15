@@ -59,22 +59,22 @@ menu?.querySelectorAll("a").forEach((link) => {
 // O WhatsApp do menu lateral continua disponível como canal direto.
 const LEADFLOW_FORM_URL = "https://leadflow.cleuzasouza866.workers.dev/f/iluminar-orcamento";
 
-const leadflowCampaignByPath = {
-  "/": "home",
-  "/index.html": "home",
-  "/higienizacao/": "higienizacao_ar",
-  "/higienizacao/index.html": "higienizacao_ar",
-  "/instalacao/": "instalacao_ar",
-  "/instalacao/index.html": "instalacao_ar",
-  "/instalacoes-eletricas/": "instalacoes_eletricas",
-  "/instalacoes-eletricas/index.html": "instalacoes_eletricas",
-  "/seguranca-eletronica/": "seguranca_eletronica",
-  "/seguranca-eletronica/index.html": "seguranca_eletronica",
-  "/automacao/": "automacao_residencial",
-  "/automacao/index.html": "automacao_residencial",
+const leadflowContextByPath = {
+  "/": { campaign: "home" },
+  "/index.html": { campaign: "home" },
+  "/higienizacao/": { campaign: "higienizacao_ar", service: "ar", problem: "Quero higienizar" },
+  "/higienizacao/index.html": { campaign: "higienizacao_ar", service: "ar", problem: "Quero higienizar" },
+  "/instalacao/": { campaign: "instalacao_ar", service: "ar", problem: "Quero instalar" },
+  "/instalacao/index.html": { campaign: "instalacao_ar", service: "ar", problem: "Quero instalar" },
+  "/instalacoes-eletricas/": { campaign: "instalacoes_eletricas", service: "eletr" },
+  "/instalacoes-eletricas/index.html": { campaign: "instalacoes_eletricas", service: "eletr" },
+  "/seguranca-eletronica/": { campaign: "seguranca_eletronica", service: "seg" },
+  "/seguranca-eletronica/index.html": { campaign: "seguranca_eletronica", service: "seg" },
+  "/automacao/": { campaign: "automacao_residencial", service: "auto" },
+  "/automacao/index.html": { campaign: "automacao_residencial", service: "auto" },
 };
 
-function buildLeadFlowUrl(campaign) {
+function buildLeadFlowUrl(context) {
   const target = new URL(LEADFLOW_FORM_URL);
   const currentParams = new URLSearchParams(window.location.search);
   const trackingParams = [
@@ -101,22 +101,30 @@ function buildLeadFlowUrl(campaign) {
   }
 
   if (!target.searchParams.has("utm_campaign")) {
-    target.searchParams.set("utm_campaign", campaign);
+    target.searchParams.set("utm_campaign", context.campaign);
+  }
+
+  if (context.service) {
+    target.searchParams.set("service", context.service);
+  }
+
+  if (context.problem) {
+    target.searchParams.set("problem", context.problem);
   }
 
   return target.toString();
 }
 
 function setupLeadFlowLinks() {
-  const campaign = leadflowCampaignByPath[window.location.pathname];
-  if (!campaign) return;
+  const context = leadflowContextByPath[window.location.pathname];
+  if (!context) return;
 
   const links = document.querySelectorAll(
     'main a.btn-whatsapp[href*="wa.me/5545988429228"]'
   );
 
   links.forEach((link) => {
-    link.href = buildLeadFlowUrl(campaign);
+    link.href = buildLeadFlowUrl(context);
     link.removeAttribute("target");
     link.removeAttribute("rel");
     link.removeAttribute("onclick");
@@ -129,7 +137,8 @@ function setupLeadFlowLinks() {
       if (typeof window.gtag === "function") {
         window.gtag("event", "leadflow_form_open", {
           source_page: window.location.pathname,
-          campaign,
+          campaign: context.campaign,
+          service: context.service || "",
         });
       }
     });
